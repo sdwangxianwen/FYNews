@@ -8,22 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		21C470E821464050005E63D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470E721464050005E63D2 /* AppDelegate.swift */; };
-		21C470EA21464050005E63D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470E921464050005E63D2 /* ViewController.swift */; };
-		21C470ED21464050005E63D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C470EB21464050005E63D2 /* Main.storyboard */; };
+		21C470EA21464050005E63D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470E921464050005E63D2 /* HomeViewController.swift */; };
 		21C470F021464050005E63D2 /* news.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21C470EE21464050005E63D2 /* news.xcdatamodeld */; };
 		21C470F221464051005E63D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C470F121464051005E63D2 /* Assets.xcassets */; };
 		21C470F521464051005E63D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C470F321464051005E63D2 /* LaunchScreen.storyboard */; };
+		21C470FE214648E1005E63D2 /* FYNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470FD214648E1005E63D2 /* FYNavController.swift */; };
+		21C4710021464901005E63D2 /* FYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470FF21464901005E63D2 /* FYTabBarController.swift */; };
+		21C4710921464B22005E63D2 /* FYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4710821464B22005E63D2 /* FYHomeViewController.swift */; };
+		21C4711221464B5E005E63D2 /* FYMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4711121464B5E005E63D2 /* FYMeViewController.swift */; };
+		21C4711421464B6C005E63D2 /* FYZhiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4711321464B6C005E63D2 /* FYZhiViewController.swift */; };
+		21C4711921464E44005E63D2 /* FYHomeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4711821464E44005E63D2 /* FYHomeApi.swift */; };
+		21C4711B21464E88005E63D2 /* FYNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4711A21464E88005E63D2 /* FYNetManager.swift */; };
+		21C4711D214657EC005E63D2 /* FYHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4711C214657EC005E63D2 /* FYHomeModel.swift */; };
+		21C4712621465E80005E63D2 /* FYZhiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4712521465E80005E63D2 /* FYZhiTableViewCell.swift */; };
+		74F31070A2617DDA87E6CE6F /* Pods_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0AB8C963D32E8A846A11F3C /* Pods_news.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21C470E421464050005E63D2 /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C470E721464050005E63D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21C470E921464050005E63D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		21C470EC21464050005E63D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		21C470E921464050005E63D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		21C470EF21464050005E63D2 /* news.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = news.xcdatamodel; sourceTree = "<group>"; };
 		21C470F121464051005E63D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21C470F421464051005E63D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21C470F621464051005E63D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C470FD214648E1005E63D2 /* FYNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYNavController.swift; sourceTree = "<group>"; };
+		21C470FF21464901005E63D2 /* FYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYTabBarController.swift; sourceTree = "<group>"; };
+		21C4710821464B22005E63D2 /* FYHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHomeViewController.swift; sourceTree = "<group>"; };
+		21C4711121464B5E005E63D2 /* FYMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYMeViewController.swift; sourceTree = "<group>"; };
+		21C4711321464B6C005E63D2 /* FYZhiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYZhiViewController.swift; sourceTree = "<group>"; };
+		21C4711821464E44005E63D2 /* FYHomeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHomeApi.swift; sourceTree = "<group>"; };
+		21C4711A21464E88005E63D2 /* FYNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYNetManager.swift; sourceTree = "<group>"; };
+		21C4711C214657EC005E63D2 /* FYHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHomeModel.swift; sourceTree = "<group>"; };
+		21C4711E21465994005E63D2 /* news-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "news-Bridging-Header.h"; sourceTree = "<group>"; };
+		21C4712521465E80005E63D2 /* FYZhiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYZhiTableViewCell.swift; sourceTree = "<group>"; };
+		30599A3A22ACF912BD413035 /* Pods-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.release.xcconfig"; path = "Pods/Target Support Files/Pods-news/Pods-news.release.xcconfig"; sourceTree = "<group>"; };
+		BBC488B2AA8A5FA0EA584B0B /* Pods-news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.debug.xcconfig"; path = "Pods/Target Support Files/Pods-news/Pods-news.debug.xcconfig"; sourceTree = "<group>"; };
+		F0AB8C963D32E8A846A11F3C /* Pods_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F31070A2617DDA87E6CE6F /* Pods_news.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +64,8 @@
 			children = (
 				21C470E621464050005E63D2 /* news */,
 				21C470E521464050005E63D2 /* Products */,
+				7C03CDB642900024D509B199 /* Pods */,
+				65BDDE88634186D7F475D39C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +80,161 @@
 		21C470E621464050005E63D2 /* news */ = {
 			isa = PBXGroup;
 			children = (
+				21C4710421464AEB005E63D2 /* Classess */,
 				21C470E721464050005E63D2 /* AppDelegate.swift */,
-				21C470E921464050005E63D2 /* ViewController.swift */,
-				21C470EB21464050005E63D2 /* Main.storyboard */,
+				21C470E921464050005E63D2 /* HomeViewController.swift */,
 				21C470F121464051005E63D2 /* Assets.xcassets */,
 				21C470F321464051005E63D2 /* LaunchScreen.storyboard */,
 				21C470F621464051005E63D2 /* Info.plist */,
 				21C470EE21464050005E63D2 /* news.xcdatamodeld */,
+				21C4711E21465994005E63D2 /* news-Bridging-Header.h */,
 			);
 			path = news;
+			sourceTree = "<group>";
+		};
+		21C470FC214648BA005E63D2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				21C470FD214648E1005E63D2 /* FYNavController.swift */,
+				21C470FF21464901005E63D2 /* FYTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		21C4710121464ACE005E63D2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				21C4710721464B0B005E63D2 /* M */,
+				21C4710621464B04005E63D2 /* V */,
+				21C4710521464AFB005E63D2 /* C */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		21C4710221464AD5005E63D2 /* Zhiku */ = {
+			isa = PBXGroup;
+			children = (
+				21C4710D21464B3D005E63D2 /* C */,
+				21C4710C21464B37005E63D2 /* V */,
+				21C4710A21464B2A005E63D2 /* M */,
+			);
+			path = Zhiku;
+			sourceTree = "<group>";
+		};
+		21C4710321464ADE005E63D2 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				21C4711021464B4E005E63D2 /* C */,
+				21C4710F21464B49005E63D2 /* V */,
+				21C4710E21464B43005E63D2 /* M */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		21C4710421464AEB005E63D2 /* Classess */ = {
+			isa = PBXGroup;
+			children = (
+				21C4711521464D65005E63D2 /* net */,
+				21C4710321464ADE005E63D2 /* Mine */,
+				21C4710221464AD5005E63D2 /* Zhiku */,
+				21C4710121464ACE005E63D2 /* Home */,
+				21C470FC214648BA005E63D2 /* Main */,
+			);
+			path = Classess;
+			sourceTree = "<group>";
+		};
+		21C4710521464AFB005E63D2 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				21C4710821464B22005E63D2 /* FYHomeViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		21C4710621464B04005E63D2 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		21C4710721464B0B005E63D2 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		21C4710A21464B2A005E63D2 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				21C4711C214657EC005E63D2 /* FYHomeModel.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		21C4710C21464B37005E63D2 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				21C4712521465E80005E63D2 /* FYZhiTableViewCell.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		21C4710D21464B3D005E63D2 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				21C4711321464B6C005E63D2 /* FYZhiViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		21C4710E21464B43005E63D2 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		21C4710F21464B49005E63D2 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		21C4711021464B4E005E63D2 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				21C4711121464B5E005E63D2 /* FYMeViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		21C4711521464D65005E63D2 /* net */ = {
+			isa = PBXGroup;
+			children = (
+				21C4711821464E44005E63D2 /* FYHomeApi.swift */,
+				21C4711A21464E88005E63D2 /* FYNetManager.swift */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
+		65BDDE88634186D7F475D39C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0AB8C963D32E8A846A11F3C /* Pods_news.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C03CDB642900024D509B199 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBC488B2AA8A5FA0EA584B0B /* Pods-news.debug.xcconfig */,
+				30599A3A22ACF912BD413035 /* Pods-news.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21C470F921464051005E63D2 /* Build configuration list for PBXNativeTarget "news" */;
 			buildPhases = (
+				EDEF3ACC05FB9E9D203D9BA6 /* [CP] Check Pods Manifest.lock */,
 				21C470E021464050005E63D2 /* Sources */,
 				21C470E121464050005E63D2 /* Frameworks */,
 				21C470E221464050005E63D2 /* Resources */,
+				5B4A884022A87A807A1D0C02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -93,12 +265,14 @@
 		21C470DC21464050005E63D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FY;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = wang;
 				TargetAttributes = {
 					21C470E321464050005E63D2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -127,34 +301,95 @@
 			files = (
 				21C470F521464051005E63D2 /* LaunchScreen.storyboard in Resources */,
 				21C470F221464051005E63D2 /* Assets.xcassets in Resources */,
-				21C470ED21464050005E63D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B4A884022A87A807A1D0C02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-news/Pods-news-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-SwiftyJSONMapper/Moya_SwiftyJSONMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_SwiftyJSONMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-news/Pods-news-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDEF3ACC05FB9E9D203D9BA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-news-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21C470E021464050005E63D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C470EA21464050005E63D2 /* ViewController.swift in Sources */,
+				21C4711B21464E88005E63D2 /* FYNetManager.swift in Sources */,
+				21C4710021464901005E63D2 /* FYTabBarController.swift in Sources */,
+				21C470FE214648E1005E63D2 /* FYNavController.swift in Sources */,
+				21C4711921464E44005E63D2 /* FYHomeApi.swift in Sources */,
+				21C4710921464B22005E63D2 /* FYHomeViewController.swift in Sources */,
+				21C470EA21464050005E63D2 /* HomeViewController.swift in Sources */,
 				21C470E821464050005E63D2 /* AppDelegate.swift in Sources */,
+				21C4711421464B6C005E63D2 /* FYZhiViewController.swift in Sources */,
+				21C4712621465E80005E63D2 /* FYZhiTableViewCell.swift in Sources */,
+				21C4711D214657EC005E63D2 /* FYHomeModel.swift in Sources */,
 				21C470F021464050005E63D2 /* news.xcdatamodeld in Sources */,
+				21C4711221464B5E005E63D2 /* FYMeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		21C470EB21464050005E63D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				21C470EC21464050005E63D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		21C470F321464051005E63D2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,8 +517,10 @@
 		};
 		21C470FA21464051005E63D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBC488B2AA8A5FA0EA584B0B /* Pods-news.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LJPKYK3KDJ;
 				INFOPLIST_FILE = news/Info.plist;
@@ -293,6 +530,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = demo.news;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "news/news-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,8 +539,10 @@
 		};
 		21C470FB21464051005E63D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30599A3A22ACF912BD413035 /* Pods-news.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LJPKYK3KDJ;
 				INFOPLIST_FILE = news/Info.plist;
@@ -311,6 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = demo.news;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "news/news-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
