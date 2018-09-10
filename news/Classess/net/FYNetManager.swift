@@ -9,10 +9,9 @@
 import UIKit
 import Moya
 import SwiftyJSON
-import ObjectMapper
+
 
 //成功的闭包
-typealias SuccessArrModelClosure = (_ result: [Mappable]?)->Void //返回的是数组json
 typealias SuccessJSONClosure = (_ result:JSON) -> Void  //返回的是json
 
 //失败的闭包

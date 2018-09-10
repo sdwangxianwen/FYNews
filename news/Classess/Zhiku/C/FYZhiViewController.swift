@@ -9,9 +9,8 @@
 import UIKit
 import YYModel
 
-
-class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
+   
     var arrM : NSMutableArray!
     var tableView : UITableView!
     override func viewDidLoad() {
@@ -49,7 +48,7 @@ class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     //MARK:网络请求
     func network() {
-        FYNetManager.shared.requestDataWithTargetJSON(target: HomeAPI.recommendCategoryList, successClosure: { (response) in
+        FYNetManager.shared.requestDataWithTargetJSON(target: HomeAPI.zhiList, successClosure: { (response) in
             // 字典转模型
             let cateArr  = NSArray.yy_modelArray(with: FYHomeModel.self, json: response.rawValue) as! [FYHomeModel]
             self.arrM.addObjects(from: cateArr)
@@ -58,7 +57,4 @@ class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             print(error as Any)
         }
     }
-    
-    
-
 }

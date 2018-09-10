@@ -12,7 +12,7 @@ import Moya
 let HomeProvider = MoyaProvider<HomeAPI>()
 
 public enum HomeAPI {
-    case recommendCategoryList //分类推荐列表
+    case zhiList //智库的列表
     case liveCateList  //分类列表
     
 }
@@ -21,18 +21,13 @@ extension HomeAPI : TargetType {
     
     //服务器地址
     public var baseURL: URL {
-        switch self {
-        case .recommendCategoryList:
-            return URL(string: "http://47.104.79.197:8080")!
-        case .liveCateList:
-            return URL(string: "https://apiv2.douyucdn.cn")!
-        }
+        return URL(string: "http://47.104.79.197:8080")!
     }
     
     //各个请求的具体路径
     public var path: String {
         switch self {
-        case .recommendCategoryList:
+        case .zhiList:
             return "/newsapi/Server/microText/listMicroText.do"
         case .liveCateList:
             return "/live/cate/getLiveCate1List"
@@ -41,18 +36,13 @@ extension HomeAPI : TargetType {
     
     //请求类型
     public var method: Moya.Method {
-        switch self {
-        case .recommendCategoryList:
-            return .post
-        case .liveCateList:
-            return .get
-        }
+       return .post
     }
     
     //请求任务事件（这里附带上参数）
     public var task: Task {
         switch self {
-        case .recommendCategoryList:
+        case .zhiList:
             var params: [String: Any] = [:]
             params["client_sys"] = "ios"
             return .requestParameters(parameters: params,

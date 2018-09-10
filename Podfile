@@ -8,8 +8,8 @@ target 'news' do
   pod 'Moya'
   pod 'Moya-SwiftyJSONMapper'
   pod 'IQKeyboardManagerSwift'
-  pod 'ESPullToRefresh'
-  pod 'ObjectMapper', '~> 3.3'
+#  pod 'ESPullToRefresh'  //不好用
+#  pod 'ObjectMapper', '~> 3.3'  //不好用
   pod 'YYModel'
   pod 'SDWebImage'
 
