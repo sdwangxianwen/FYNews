@@ -4,7 +4,7 @@ platform :ios, '9.0'
 target 'news' do
 
   pod 'SnapKit'
-  pod 'Kingfisher'
+  pod 'Kingfisher' #不好用
   pod 'Moya'
   pod 'Moya-SwiftyJSONMapper'
   pod 'IQKeyboardManagerSwift'

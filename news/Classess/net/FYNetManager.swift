@@ -13,10 +13,8 @@ import SwiftyJSON
 
 //成功的闭包
 typealias SuccessJSONClosure = (_ result:JSON) -> Void  //返回的是json
-
 //失败的闭包
 typealias FailClosure = (_ result : String?) -> Void
-
 
 class FYNetManager: NSObject {
     static let shared = FYNetManager()
@@ -37,7 +35,12 @@ class FYNetManager: NSObject {
                         failClosure(self.failInfo)
                         return
                     }
-                    successClosure(json["response"])
+                    if json["data"].isEmpty {
+                        successClosure(json["response"])
+                    } else {
+                        successClosure(json["data"])
+                    }
+                    
                 } catch {
                     failClosure(self.failInfo)
                 }

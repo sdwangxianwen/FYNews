@@ -15,29 +15,29 @@ class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var tableView : UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.arrM = NSMutableArray(array: []) //初始化可变数组
-        self.initTableView()
-        self.network()
+        arrM = NSMutableArray(array: []) //初始化可变数组
+        initTableView()
+        network()
     }
     
     //MARK:创建视图
     func initTableView()  {
-        self.tableView = UITableView.init(frame: self.view.bounds)
-        self.view.addSubview(self.tableView)
-        self.tableView.estimatedRowHeight = 200
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(FYZhiTableViewCell.self, forCellReuseIdentifier: "FYZhiTableViewCellID")
+        tableView = UITableView.init(frame: view.bounds)
+        view.addSubview(tableView)
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(FYZhiTableViewCell.self, forCellReuseIdentifier: "FYZhiTableViewCellID")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrM.count
+        return arrM.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : FYZhiTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FYZhiTableViewCellID", for: indexPath) as! FYZhiTableViewCell
         cell.backgroundColor = UIColor.white
-        let model = self.arrM[indexPath.row] as! FYHomeModel
+        let model = arrM[indexPath.row] as! FYHomeModel
         cell.setModel(model: model)
         return cell
     }

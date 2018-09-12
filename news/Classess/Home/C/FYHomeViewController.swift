@@ -11,12 +11,14 @@ import YYModel
 
 class FYHomeViewController: UIViewController {
     
-   
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+
+        FYNetManager.shared.requestDataWithTargetJSON(target: HomeAPI.kankanList, successClosure: { (response) in
+            print(response)
+        }) { (error) in
+            print(error ?? (Any).self)
+        }
        
     }
 
