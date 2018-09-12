@@ -21,6 +21,8 @@
 		21C4711B21464E88005E63D2 /* FYNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4711A21464E88005E63D2 /* FYNetManager.swift */; };
 		21C4711D214657EC005E63D2 /* FYHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4711C214657EC005E63D2 /* FYHomeModel.swift */; };
 		21C4712621465E80005E63D2 /* FYZhiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4712521465E80005E63D2 /* FYZhiTableViewCell.swift */; };
+		21C471CB2148EF7D005E63D2 /* KKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C471CA2148EF7D005E63D2 /* KKTableViewCell.swift */; };
+		21C471CD2148EF98005E63D2 /* kkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C471CC2148EF98005E63D2 /* kkModel.swift */; };
 		74F31070A2617DDA87E6CE6F /* Pods_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0AB8C963D32E8A846A11F3C /* Pods_news.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		21C4711C214657EC005E63D2 /* FYHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHomeModel.swift; sourceTree = "<group>"; };
 		21C4711E21465994005E63D2 /* news-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "news-Bridging-Header.h"; sourceTree = "<group>"; };
 		21C4712521465E80005E63D2 /* FYZhiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYZhiTableViewCell.swift; sourceTree = "<group>"; };
+		21C471CA2148EF7D005E63D2 /* KKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KKTableViewCell.swift; sourceTree = "<group>"; };
+		21C471CC2148EF98005E63D2 /* kkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kkModel.swift; sourceTree = "<group>"; };
 		30599A3A22ACF912BD413035 /* Pods-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.release.xcconfig"; path = "Pods/Target Support Files/Pods-news/Pods-news.release.xcconfig"; sourceTree = "<group>"; };
 		BBC488B2AA8A5FA0EA584B0B /* Pods-news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.debug.xcconfig"; path = "Pods/Target Support Files/Pods-news/Pods-news.debug.xcconfig"; sourceTree = "<group>"; };
 		F0AB8C963D32E8A846A11F3C /* Pods_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +158,7 @@
 		21C4710621464B04005E63D2 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				21C471CA2148EF7D005E63D2 /* KKTableViewCell.swift */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		21C4710721464B0B005E63D2 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				21C471CC2148EF98005E63D2 /* kkModel.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-SwiftyJSONMapper/Moya_SwiftyJSONMapper.framework",
@@ -331,6 +338,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_SwiftyJSONMapper.framework",
@@ -373,6 +381,7 @@
 				21C4711B21464E88005E63D2 /* FYNetManager.swift in Sources */,
 				21C4710021464901005E63D2 /* FYTabBarController.swift in Sources */,
 				21C470FE214648E1005E63D2 /* FYNavController.swift in Sources */,
+				21C471CD2148EF98005E63D2 /* kkModel.swift in Sources */,
 				21C4711921464E44005E63D2 /* FYHomeApi.swift in Sources */,
 				21C4710921464B22005E63D2 /* FYHomeViewController.swift in Sources */,
 				21C470EA21464050005E63D2 /* HomeViewController.swift in Sources */,
@@ -382,6 +391,7 @@
 				21C4711D214657EC005E63D2 /* FYHomeModel.swift in Sources */,
 				21C470F021464050005E63D2 /* news.xcdatamodeld in Sources */,
 				21C4711221464B5E005E63D2 /* FYMeViewController.swift in Sources */,
+				21C471CB2148EF7D005E63D2 /* KKTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

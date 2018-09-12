@@ -8,16 +8,25 @@
 
 import Foundation
 import Moya
+import MBProgressHUD
 
-let HomeProvider = MoyaProvider<HomeAPI>()
+////MARK:监听网络的状态
+//let networkPlugin = NetworkActivityPlugin { (type, typ) in
+//    switch type {
+//    case .began:
+//        MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
+//    case .ended:
+//        MBProgressHUD.hide(for:  UIApplication.shared.keyWindow!, animated: true)
+//    }
+//}
+
 
 public enum HomeAPI {
     case zhiList //智库的列表
-    case kankanList  //看看漫画的列表    
+    case kankanList(NSInteger)  //看看漫画的列表,有可变参数的时候,比如下拉刷新的pagenum的变化
 }
 
 extension HomeAPI : TargetType {
-    
     //服务器地址
     public var baseURL: URL {
         switch self {
@@ -56,10 +65,10 @@ extension HomeAPI : TargetType {
             params["client_sys"] = "ios"
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
-        case .kankanList:
+        case .kankanList(let pagenum):
             var params: [String: Any] = [:]
             params["gender"] = 1
-            params["since"] = 0
+            params["since"] = pagenum
             params["new_device"] = false
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
@@ -78,3 +87,5 @@ extension HomeAPI : TargetType {
         return nil
     }
 }
+ let HomeProvider = MoyaProvider<HomeAPI>()
+
