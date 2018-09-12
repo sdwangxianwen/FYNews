@@ -33,11 +33,11 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     //MARK:tableview的代理和数据源方法
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrm?.count ?? 0
+        return arrM.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : KKTableViewCell = tableView.dequeueReusableCell(withIdentifier: "KKTableViewCellID", for: indexPath) as! KKTableViewCell
-        let model = arrm![indexPath.row] as! kkModel
+        let model = arrM[indexPath.row] as! kkModel
         cell.setModel(model: model)
         return cell
     }
@@ -60,7 +60,7 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             print(response)
             let arr = NSArray.yy_modelArray(with: kkModel.self, json: response["comics"].rawValue) as! [kkModel]
             if arr.count > 0  {
-                self.arrm?.addObjects(from: arr)
+                self.arrM.addObjects(from: arr)
             }
             else {
                 self.pageNUm = max(self.pageNUm - 1, 0)
@@ -74,4 +74,10 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.tableView.mj_footer.endRefreshing()
         }
     }
+    
+    //MARK:懒加载
+    lazy var arrM  = { () -> NSMutableArray in
+        let arrM = NSMutableArray(array: [])
+        return arrM
+    }()
 }
