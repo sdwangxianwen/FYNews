@@ -24,6 +24,7 @@ import MBProgressHUD
 public enum HomeAPI {
     case zhiList //智库的列表
     case kankanList(NSInteger)  //看看漫画的列表,有可变参数的时候,比如下拉刷新的pagenum的变化
+    case douyuHotList //斗鱼的热门推荐
 }
 
 extension HomeAPI : TargetType {
@@ -34,6 +35,8 @@ extension HomeAPI : TargetType {
             return URL(string: "http://47.104.79.197:8080")!
         case .kankanList:
             return URL(string: "https://api.kkmh.com/")!
+        case.douyuHotList:
+            return URL(string: "https://apiv2.douyucdn.cn/")!
         }
     }
     
@@ -44,6 +47,8 @@ extension HomeAPI : TargetType {
             return "/newsapi/Server/microText/listMicroText.do"
         case .kankanList:
             return "v1/daily/comic_lists/0"
+        case .douyuHotList:
+            return "live/cate/getLiveRecommendCate2"
         }
     }
     
@@ -54,22 +59,27 @@ extension HomeAPI : TargetType {
             return .post
         case .kankanList:
             return .get
+        case .douyuHotList:
+            return .get
         }
     }
     
     //请求任务事件（这里附带上参数),想想如果接口多的话,这里会是多么壮观
     public var task: Task {
+        var params: [String: Any] = [:]
         switch self {
         case .zhiList:
-            var params: [String: Any] = [:]
             params["client_sys"] = "ios"
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
         case .kankanList(let pagenum):
-            var params: [String: Any] = [:]
             params["gender"] = 1
             params["since"] = pagenum
             params["new_device"] = false
+            return .requestParameters(parameters: params,
+                                      encoding: URLEncoding.default)
+        case .douyuHotList:
+            params["client_sys"] = "ios"
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
         }

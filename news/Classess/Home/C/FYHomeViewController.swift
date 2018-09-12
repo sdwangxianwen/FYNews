@@ -74,7 +74,6 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.tableView.mj_footer.endRefreshing()
         }
     }
-    
     //MARK:懒加载
     lazy var arrM  = { () -> NSMutableArray in
         let arrM = NSMutableArray(array: [])
