@@ -11,7 +11,6 @@ import YYModel
 import MJRefresh
 
 class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
     var pageNUm : NSInteger!
     var tableView : UITableView!
     var arrm : NSMutableArray?
@@ -22,7 +21,6 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         initTableView()
         networking()
     }
-    
     //MARK:创建tableView
     func initTableView()  {
         tableView = UITableView(frame: view.frame, style: .plain)
@@ -31,7 +29,7 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
         tableView.dataSource = self;
         tableView.register(KKTableViewCell.self, forCellReuseIdentifier: "KKTableViewCellID")
         tableView.mj_header = MJRefreshGifHeader.init(refreshingTarget: self, refreshingAction: #selector(downFresh))
-        tableView.mj_footer = MJRefreshAutoGifFooter.init(refreshingTarget: self, refreshingAction: #selector(pullLoad))
+        tableView.mj_footer = MJRefreshFooter.init(refreshingTarget: self, refreshingAction: #selector(pullLoad))
     }
     //MARK:tableview的代理和数据源方法
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +57,7 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     //MARK:网络请求
     func networking()  {
         FYNetManager.shared.requestDataWithTargetJSON(target: HomeAPI.kankanList(pageNUm), successClosure: { (response) in
-//            print(response)
+            print(response)
             let arr = NSArray.yy_modelArray(with: kkModel.self, json: response["comics"].rawValue) as! [kkModel]
             if arr.count > 0  {
                 self.arrm?.addObjects(from: arr)
@@ -76,8 +74,4 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.tableView.mj_footer.endRefreshing()
         }
     }
-
-    
-    
-   
 }
