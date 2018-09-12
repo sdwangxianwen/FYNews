@@ -19,7 +19,6 @@ class FYHomeViewController: UIViewController {
         }) { (error) in
             print(error ?? (Any).self)
         }
-       
     }
 
    

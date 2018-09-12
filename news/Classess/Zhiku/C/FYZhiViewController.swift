@@ -8,6 +8,7 @@
 
 import UIKit
 import YYModel
+import MJRefresh
 
 class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
    
@@ -29,6 +30,13 @@ class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(FYZhiTableViewCell.self, forCellReuseIdentifier: "FYZhiTableViewCellID")
+        tableView.mj_header = MJRefreshGifHeader.init(refreshingTarget: self, refreshingAction: #selector(pullFresh))
+        tableView.mj_footer = MJRefreshAutoGifFooter.init(refreshingTarget: self, refreshingAction: #selector(pullFresh))
+    }
+    
+    //MARK:下拉刷新
+    @objc func pullFresh() {
+        network()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +58,8 @@ class FYZhiViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     func network() {
         FYNetManager.shared.requestDataWithTargetJSON(target: HomeAPI.zhiList, successClosure: { (response) in
             // 字典转模型
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
             let cateArr  = NSArray.yy_modelArray(with: FYHomeModel.self, json: response.rawValue) as! [FYHomeModel]
             self.arrM.addObjects(from: cateArr)
             self.tableView.reloadData()
