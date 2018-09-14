@@ -7,50 +7,98 @@
 //
 
 import UIKit
+import YYModel
 
-class FYMeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
-    var collectionview : UICollectionView!
+class FYMeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+   
+    var segementControl : UISegmentedControl!
+    var listArr : NSArray!
+    var tableView : UITableView!
+    var offset : CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
+        listArr = NSArray()
+        offset = 0
+        navigationController?.setNavigationBarHidden(true, animated: false)
         setupUI()
         netWorking()
-        
     }
     
     func setupUI()  {
-        let layout = UICollectionViewFlowLayout.init()
-        layout.itemSize = CGSize(width: view.frame.size.width/4 - 5, height: view.frame.size.width/4 - 5)
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
-        collectionview = UICollectionView(frame: view.frame, collectionViewLayout: layout)
-        view.addSubview(collectionview)
-        collectionview.delegate = self
-        collectionview.dataSource = self
-        collectionview.register(FYDouYuCollectionViewCell.self, forCellWithReuseIdentifier: "FYDouYuCollectionViewCellID")
-        collectionview.backgroundColor = UIColor.white
-        collectionview.alwaysBounceVertical = true
+        segementControl = UISegmentedControl.init(frame: CGRect(x: 10, y: 64, width:self.view.frame.size.width - 20 , height: 44))
+        view.addSubview(self.segementControl)
+        segementControl.backgroundColor = UIColor().hexStringToColor(hexString: "0x07a2ee")
+        segementControl.layer.cornerRadius = 22
+        segementControl.clipsToBounds = true
+        segementControl.layer.borderColor = UIColor().hexStringToColor(hexString:"0x07a2ee").cgColor
+        segementControl.layer.borderWidth = 2
+        segementControl.tintColor = UIColor.white
+        segementControl.setTitleTextAttributes([:], for: .normal)
+        segementControl.setTitleTextAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17),NSAttributedStringKey.foregroundColor : UIColor().hexStringToColor(hexString: "0x07a2ee")], for: .normal)
+        
+        tableView = UITableView.init(frame: CGRect(x: 0, y: 108, width: view.frame.size.width, height: view.frame.size.height - 108))
+        view.addSubview(tableView)
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView.register(FYImageTableViewCell.self, forCellReuseIdentifier: "cell")
+//        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = 150
+        tableView.register(UINib(nibName: "FYMoveImageTableViewCell", bundle: nil), forCellReuseIdentifier: "FYMoveImageTableViewCellID")
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrM.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listArr!.count
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionview.dequeueReusableCell(withReuseIdentifier: "FYDouYuCollectionViewCellID", for: indexPath) as!FYDouYuCollectionViewCell
-        let model = arrM[indexPath.row]
-        cell.setModel(model: model as! FYDouYuModel)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell : FYImageTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FYImageTableViewCell
+//        cell.model = (listArr![indexPath.row] as! imageList)
+//        return cell
+       let cell = tableView.dequeueReusableCell(withIdentifier: "FYMoveImageTableViewCellID", for: indexPath) as! FYMoveImageTableViewCell
+        cell.model = (listArr![indexPath.row] as! imageList)
         return cell
     }
-
+  
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+         // 获取表视图的可见单元格。(可见的视图)
+        let arr : [FYMoveImageTableViewCell] = tableView.visibleCells as! [FYMoveImageTableViewCell]
+        
+        for cell in arr {
+            cell.cellOnTableView(tableView: tableView, view: view)
+        }
+       
+    }
     
+
     func netWorking()  {
         FYNetManager.shared.requestDataWithTargetJSON(target: HomeAPI.douyuHotList, successClosure: { (response) in
             print(response)
-            let arr = NSArray.yy_modelArray(with: FYDouYuModel.self, json: response["cate2_list"].rawValue) as! [FYDouYuModel]
-            self.arrM.addObjects(from: arr)
-            self.collectionview.reloadData()
+            
+            let arr = NSArray.yy_modelArray(with: tabHorizontalModel.self, json: response["tab"]["tabHorizontal"].rawString() as Any) as! [tabHorizontalModel]
+            for index in stride(from: 0, through: arr.count - 1, by: 1) {
+                let model = arr[index]
+                self.segementControl.insertSegment(withTitle: model.tabName, at: index, animated: false)
+                self.segementControl.selectedSegmentIndex = 0
+                self.segementControl.addTarget(self, action: #selector(self.segementClick(segement:)), for: .valueChanged)
+            }
         }) { (error) in
             
         }
+        
+        FYNetManager.shared.requestDataWithTargetJSON(target: HomeAPI.imageUrl, successClosure: { (response) in
+            print(response)
+            self.listArr  = NSArray.yy_modelArray(with: imageList.self, json: response["ret_data"]["list"].rawString() as Any)! as NSArray
+        
+            self.tableView.reloadData()
+        }) { (error) in
+            
+        }
+    }
+    @objc func segementClick(segement:UISegmentedControl) {
+        print("dianjil")
+    }
+    
+    func listNetWork(tabtype:String) {
+        
     }
     
     //MARK:懒加载

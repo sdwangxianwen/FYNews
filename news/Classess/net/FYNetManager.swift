@@ -23,8 +23,8 @@ class FYNetManager: NSObject {
     private let failInfo = "数据解析失败"
     
     /// 请求JSON数据
-    func requestDataWithTargetJSON<T:TargetType>(target : T, successClosure: @escaping SuccessJSONClosure, failClosure: @escaping FailClosure) {
-        let requestProvider = MoyaProvider<T>(requestClosure:requestTimeoutClosure(target: target))
+    func requestDataWithTargetJSON(target : HomeAPI, successClosure: @escaping SuccessJSONClosure, failClosure: @escaping FailClosure) {
+        let requestProvider = MoyaProvider<HomeAPI>(endpointClosure: endpointClosure, requestClosure : requestClosure,plugins:[spinerPlugin])
         let _ = requestProvider.request(target) { (result) -> () in
             switch result{
             case let .success(response):
@@ -63,5 +63,5 @@ class FYNetManager: NSObject {
         }
         return requestTimeoutClosure
     }
-    
 }
+
