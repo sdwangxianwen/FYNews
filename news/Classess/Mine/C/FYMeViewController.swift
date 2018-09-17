@@ -61,11 +61,9 @@ class FYMeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
          // 获取表视图的可见单元格。(可见的视图)
         let arr : [FYMoveImageTableViewCell] = tableView.visibleCells as! [FYMoveImageTableViewCell]
-        
         for cell in arr {
             cell.cellOnTableView(tableView: tableView, view: view)
         }
-       
     }
     
 

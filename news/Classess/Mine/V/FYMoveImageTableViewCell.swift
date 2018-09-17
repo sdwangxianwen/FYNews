@@ -10,7 +10,6 @@ import UIKit
 
 class FYMoveImageTableViewCell: UITableViewCell {
 
-  
     @IBOutlet weak var backgroundImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +23,6 @@ class FYMoveImageTableViewCell: UITableViewCell {
         //以屏幕中心点为0点 获取能看到的每个Cell离中心点得值是多少
         let distanceCenter = view.frame.size.height/2 - rect.minY;
         // 图片高度 - cell的高度 (获取图片超出cell高度部分)图片肯定要比cell大，否则不会有视觉差效果
-        //        float difference = CGRectGetHeight(self.backgroundImage.frame) - CGRectGetHeight(self.frame);
         let difference = backgroundImage.frame.size.height - self.frame.size.height
         let imageMove = (distanceCenter / view.frame.size.height) * difference
         //旧的图片Frame
@@ -33,14 +31,12 @@ class FYMoveImageTableViewCell: UITableViewCell {
         imageRect.origin.y = imageMove - (difference/2)
         //新的图片Frame
         self.backgroundImage.frame = imageRect;
-        
     }
     
     var model : imageList? {
         get {
             return self.model
         }
-        
         set(model) {
             backgroundImage.sd_setImage(with: (NSURL(string: (model?.cover_url)!)! as URL), placeholderImage: UIImage(named: ""), options: .delayPlaceholder, completed: nil)
         }

@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 import MBProgressHUD
-//https://open.adnonstop.com/camhomme/biz/prod/api/public/index.php?r=ContentCenter/List&req=eyJpc19lbmMiOjAsImN0aW1lIjoxNTM2OTEzNzAwLjYzNTk3Miwib3NfdHlwZSI6ImlvcyIsImRldmljZSI6ImlQaG9uZV84X1BsdXMiLCJpbWVpIjoiRUU0NUQzQTctM0REOS00MTQ3LTg2MjEtOUZENDZCQzlCMTBEIiwidmVyc2lvbiI6IjMuMC4wIiwicGFyYW0iOnsidHlwZSI6MSwicGFnZV9zaXplIjoxMCwicGFnZSI6MX0sImFwcF9uYW1lIjoiY2FtaG9tbWVfaXBob25lIiwic2lnbl9jb2RlIjoiNmJiMDhlMWFmZDhhYWQ2OGU5ZSJ9
+
 public enum HomeAPI {
     case zhiList //智库的列表
     case kankanList(NSInteger)  //看看漫画的列表,有可变参数的时候,比如下拉刷新的pagenum的变化
@@ -95,8 +95,6 @@ extension HomeAPI : TargetType {
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
         case .imageUrl:
-            
-//            r=ContentCenter/List&req=eyJpc19lbmMiOjAsImN0aW1lIjoxNTM2OTEzNzAwLjYzNTk3Miwib3NfdHlwZSI6ImlvcyIsImRldmljZSI6ImlQaG9uZV84X1BsdXMiLCJpbWVpIjoiRUU0NUQzQTctM0REOS00MTQ3LTg2MjEtOUZENDZCQzlCMTBEIiwidmVyc2lvbiI6IjMuMC4wIiwicGFyYW0iOnsidHlwZSI6MSwicGFnZV9zaXplIjoxMCwicGFnZSI6MX0sImFwcF9uYW1lIjoiY2FtaG9tbWVfaXBob25lIiwic2lnbl9jb2RlIjoiNmJiMDhlMWFmZDhhYWQ2OGU5ZSJ9
             params["r"] = "ContentCenter/List"
             params["req"] = "eyJpc19lbmMiOjAsImN0aW1lIjoxNTM2OTEzNzAwLjYzNTk3Miwib3NfdHlwZSI6ImlvcyIsImRldmljZSI6ImlQaG9uZV84X1BsdXMiLCJpbWVpIjoiRUU0NUQzQTctM0REOS00MTQ3LTg2MjEtOUZENDZCQzlCMTBEIiwidmVyc2lvbiI6IjMuMC4wIiwicGFyYW0iOnsidHlwZSI6MSwicGFnZV9zaXplIjoxMCwicGFnZSI6MX0sImFwcF9uYW1lIjoiY2FtaG9tbWVfaXBob25lIiwic2lnbl9jb2RlIjoiNmJiMDhlMWFmZDhhYWQ2OGU5ZSJ9"
             return .requestParameters(parameters: params,
@@ -123,10 +121,8 @@ let spinerPlugin = NetworkActivityPlugin { (state,target) in
         print("我开始请求")
         MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
     } else {
-        
         print("我结束请求")
         MBProgressHUD.hide(for: UIApplication.shared.keyWindow!, animated: true)
-        
     }
 }
 
