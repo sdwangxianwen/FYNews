@@ -16,9 +16,10 @@ class FYTabBarController: UITabBarController {
     }
     
     func setChildViewControllers() {
-        setUpChildController(FYHomeViewController(), "首页", "", "")
+        setUpChildController(FYHomeViewController(), "快看漫画", "", "")
+        setUpChildController(FYYaoQiViewController(), "有妖气", "", "")
         setUpChildController(FYZhiViewController(), "智库", "", "")
-        setUpChildController(FYMeViewController(), "我的", "", "")
+        setUpChildController(FYMeViewController(), "图片滚动", "", "")
     }
 
     // 设置子控件属性

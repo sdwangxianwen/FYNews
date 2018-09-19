@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		219555B221524C2500D2B2ED /* FYYaoQiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219555B121524C2500D2B2ED /* FYYaoQiViewController.swift */; };
 		21C470E821464050005E63D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470E721464050005E63D2 /* AppDelegate.swift */; };
 		21C470EA21464050005E63D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470E921464050005E63D2 /* HomeViewController.swift */; };
 		21C470F021464050005E63D2 /* news.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21C470EE21464050005E63D2 /* news.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		219555B121524C2500D2B2ED /* FYYaoQiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYYaoQiViewController.swift; sourceTree = "<group>"; };
 		21C470E421464050005E63D2 /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C470E721464050005E63D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21C470E921464050005E63D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		219555AF21524BEF00D2B2ED /* Yuyaoqi */ = {
+			isa = PBXGroup;
+			children = (
+				219555B021524C0500D2B2ED /* C */,
+			);
+			path = Yuyaoqi;
+			sourceTree = "<group>";
+		};
+		219555B021524C0500D2B2ED /* C */ = {
+			isa = PBXGroup;
+			children = (
+				219555B121524C2500D2B2ED /* FYYaoQiViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
 		21C470DB21464050005E63D2 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +179,7 @@
 		21C4710421464AEB005E63D2 /* Classess */ = {
 			isa = PBXGroup;
 			children = (
+				219555AF21524BEF00D2B2ED /* Yuyaoqi */,
 				21C471CE2148F68D005E63D2 /* Common */,
 				21C4711521464D65005E63D2 /* net */,
 				21C4710321464ADE005E63D2 /* Mine */,
@@ -455,6 +474,7 @@
 				21C4710021464901005E63D2 /* FYTabBarController.swift in Sources */,
 				21C47201214B8C4F005E63D2 /* FYTabModel.swift in Sources */,
 				21C470FE214648E1005E63D2 /* FYNavController.swift in Sources */,
+				219555B221524C2500D2B2ED /* FYYaoQiViewController.swift in Sources */,
 				21C471CD2148EF98005E63D2 /* kkModel.swift in Sources */,
 				21C4711921464E44005E63D2 /* FYHomeApi.swift in Sources */,
 				21C4710921464B22005E63D2 /* FYHomeViewController.swift in Sources */,
