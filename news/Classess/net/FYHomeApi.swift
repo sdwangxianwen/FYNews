@@ -94,9 +94,10 @@ extension HomeAPI : TargetType {
             
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
+//            https://open.adnonstop.com/camhomme/biz/prod/api/public/index.php?r=ContentCenter/List&req=eyJpc19lbmMiOjAsImN0aW1lIjoxNTM3MjYxNDQ4LjA3ODkxODksIm9zX3R5cGUiOiJpb3MiLCJkZXZpY2UiOiJpUGhvbmVfOF9QbHVzIiwiaW1laSI6IkVFNDVEM0E3LTNERDktNDE0Ny04NjIxLTlGRDQ2QkM5QjEwRCIsInZlcnNpb24iOiIzLjAuMCIsInBhcmFtIjp7InR5cGUiOjEsInBhZ2Vfc2l6ZSI6MTAsInBhZ2UiOjF9LCJhcHBfbmFtZSI6ImNhbWhvbW1lX2lwaG9uZSIsInNpZ25fY29kZSI6IjZiYjA4ZTFhZmQ4YWFkNjhlOWUifQ%3D%3D
         case .imageUrl:
             params["r"] = "ContentCenter/List"
-            params["req"] = "eyJpc19lbmMiOjAsImN0aW1lIjoxNTM2OTEzNzAwLjYzNTk3Miwib3NfdHlwZSI6ImlvcyIsImRldmljZSI6ImlQaG9uZV84X1BsdXMiLCJpbWVpIjoiRUU0NUQzQTctM0REOS00MTQ3LTg2MjEtOUZENDZCQzlCMTBEIiwidmVyc2lvbiI6IjMuMC4wIiwicGFyYW0iOnsidHlwZSI6MSwicGFnZV9zaXplIjoxMCwicGFnZSI6MX0sImFwcF9uYW1lIjoiY2FtaG9tbWVfaXBob25lIiwic2lnbl9jb2RlIjoiNmJiMDhlMWFmZDhhYWQ2OGU5ZSJ9"
+            params["req"] = "eyJpc19lbmMiOjAsImN0aW1lIjoxNTM3MjYxNDQ4LjA3ODkxODksIm9zX3R5cGUiOiJpb3MiLCJkZXZpY2UiOiJpUGhvbmVfOF9QbHVzIiwiaW1laSI6IkVFNDVEM0E3LTNERDktNDE0Ny04NjIxLTlGRDQ2QkM5QjEwRCIsInZlcnNpb24iOiIzLjAuMCIsInBhcmFtIjp7InR5cGUiOjEsInBhZ2Vfc2l6ZSI6MTAsInBhZ2UiOjF9LCJhcHBfbmFtZSI6ImNhbWhvbW1lX2lwaG9uZSIsInNpZ25fY29kZSI6IjZiYjA4ZTFhZmQ4YWFkNjhlOWUifQ%3D%3D"
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
         }

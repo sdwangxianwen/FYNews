@@ -28,6 +28,12 @@
 		21C47203214BAC57005E63D2 /* FYImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C47202214BAC57005E63D2 /* FYImageTableViewCell.swift */; };
 		21C47206214BC079005E63D2 /* FYMoveImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C47204214BC079005E63D2 /* FYMoveImageTableViewCell.swift */; };
 		21C47207214BC079005E63D2 /* FYMoveImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21C47205214BC079005E63D2 /* FYMoveImageTableViewCell.xib */; };
+		21C47219214FAED2005E63D2 /* guideImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21C47213214FAED2005E63D2 /* guideImage1.jpg */; };
+		21C4721A214FAED2005E63D2 /* guideImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21C47214214FAED2005E63D2 /* guideImage2.jpg */; };
+		21C4721B214FAED2005E63D2 /* guideImage6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21C47215214FAED2005E63D2 /* guideImage6.gif */; };
+		21C4721C214FAED2005E63D2 /* guideImage3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21C47216214FAED2005E63D2 /* guideImage3.jpg */; };
+		21C4721D214FAED2005E63D2 /* guideImage4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21C47217214FAED2005E63D2 /* guideImage4.jpg */; };
+		21C4721E214FAED2005E63D2 /* guideImage5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21C47218214FAED2005E63D2 /* guideImage5.jpg */; };
 		74F31070A2617DDA87E6CE6F /* Pods_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0AB8C963D32E8A846A11F3C /* Pods_news.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +62,12 @@
 		21C47202214BAC57005E63D2 /* FYImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYImageTableViewCell.swift; sourceTree = "<group>"; };
 		21C47204214BC079005E63D2 /* FYMoveImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYMoveImageTableViewCell.swift; sourceTree = "<group>"; };
 		21C47205214BC079005E63D2 /* FYMoveImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYMoveImageTableViewCell.xib; sourceTree = "<group>"; };
+		21C47213214FAED2005E63D2 /* guideImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage1.jpg; sourceTree = "<group>"; };
+		21C47214214FAED2005E63D2 /* guideImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage2.jpg; sourceTree = "<group>"; };
+		21C47215214FAED2005E63D2 /* guideImage6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guideImage6.gif; sourceTree = "<group>"; };
+		21C47216214FAED2005E63D2 /* guideImage3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage3.jpg; sourceTree = "<group>"; };
+		21C47217214FAED2005E63D2 /* guideImage4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage4.jpg; sourceTree = "<group>"; };
+		21C47218214FAED2005E63D2 /* guideImage5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guideImage5.jpg; sourceTree = "<group>"; };
 		30599A3A22ACF912BD413035 /* Pods-news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.release.xcconfig"; path = "Pods/Target Support Files/Pods-news/Pods-news.release.xcconfig"; sourceTree = "<group>"; };
 		BBC488B2AA8A5FA0EA584B0B /* Pods-news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-news.debug.xcconfig"; path = "Pods/Target Support Files/Pods-news/Pods-news.debug.xcconfig"; sourceTree = "<group>"; };
 		F0AB8C963D32E8A846A11F3C /* Pods_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +106,7 @@
 		21C470E621464050005E63D2 /* news */ = {
 			isa = PBXGroup;
 			children = (
+				21C4721F214FAEDD005E63D2 /* guideImages */,
 				21C4710421464AEB005E63D2 /* Classess */,
 				21C470E721464050005E63D2 /* AppDelegate.swift */,
 				21C470E921464050005E63D2 /* HomeViewController.swift */,
@@ -249,6 +262,19 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		21C4721F214FAEDD005E63D2 /* guideImages */ = {
+			isa = PBXGroup;
+			children = (
+				21C47213214FAED2005E63D2 /* guideImage1.jpg */,
+				21C47214214FAED2005E63D2 /* guideImage2.jpg */,
+				21C47216214FAED2005E63D2 /* guideImage3.jpg */,
+				21C47217214FAED2005E63D2 /* guideImage4.jpg */,
+				21C47218214FAED2005E63D2 /* guideImage5.jpg */,
+				21C47215214FAED2005E63D2 /* guideImage6.gif */,
+			);
+			path = guideImages;
+			sourceTree = "<group>";
+		};
 		65BDDE88634186D7F475D39C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +304,7 @@
 				21C470E121464050005E63D2 /* Frameworks */,
 				21C470E221464050005E63D2 /* Resources */,
 				5B4A884022A87A807A1D0C02 /* [CP] Embed Pods Frameworks */,
+				21C4720D214F9EC5005E63D2 /* Run Scriptdemo */,
 			);
 			buildRules = (
 			);
@@ -329,7 +356,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				21C470F521464051005E63D2 /* LaunchScreen.storyboard in Resources */,
+				21C47219214FAED2005E63D2 /* guideImage1.jpg in Resources */,
+				21C4721E214FAED2005E63D2 /* guideImage5.jpg in Resources */,
+				21C4721C214FAED2005E63D2 /* guideImage3.jpg in Resources */,
 				21C47207214BC079005E63D2 /* FYMoveImageTableViewCell.xib in Resources */,
+				21C4721A214FAED2005E63D2 /* guideImage2.jpg in Resources */,
+				21C4721D214FAED2005E63D2 /* guideImage4.jpg in Resources */,
+				21C4721B214FAED2005E63D2 /* guideImage6.gif in Resources */,
 				21C470F221464051005E63D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +370,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21C4720D214F9EC5005E63D2 /* Run Scriptdemo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Scriptdemo";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh  ./LLIconVersioning.sh";
+			shellScript = "";
+		};
 		5B4A884022A87A807A1D0C02 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +392,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-news/Pods-news-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GuidePageView/GuidePageView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -360,6 +408,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GuidePageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -555,7 +604,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBC488B2AA8A5FA0EA584B0B /* Pods-news.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LJPKYK3KDJ;

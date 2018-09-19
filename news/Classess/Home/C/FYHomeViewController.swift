@@ -9,6 +9,7 @@
 import UIKit
 import YYModel
 import MJRefresh
+import GuidePageView
 
 class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var pageNUm : NSInteger!
@@ -16,6 +17,18 @@ class FYHomeViewController: UIViewController,UITableViewDelegate,UITableViewData
     var arrm : NSMutableArray?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let guideView = GuidePageView.init(images: ["guideImage1.jpg","guideImage2.jpg","guideImage3.jpg","guideImage6.gif"], loginRegistCompletion: {
+            print("登录/注册")
+        }) {
+            print("开始使用app")
+        }
+        guideView.logtinButton.isHidden = true
+        guideView.startButton.setTitle("立即体验", for: .normal)
+        guideView.startButton.setBackgroundImage(UIImage.init(named: "start_btn_bg.png"), for: .normal)
+        guideView.frame = UIScreen.main.bounds
+        UIApplication.shared.keyWindow?.addSubview(guideView)
+        
         pageNUm = 0
         arrm = NSMutableArray(array: [])
         initTableView()

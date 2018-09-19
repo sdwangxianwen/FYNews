@@ -10,6 +10,11 @@ target 'news' do
   pod 'IQKeyboardManagerSwift'
 #  pod 'ESPullToRefresh'  //不好用
 #  pod 'ObjectMapper', '~> 3.3'  //不好用
+pod 'GuidePageView'
+
+
+
+#OC三方
   pod 'YYModel'
   pod 'SDWebImage'
   pod 'MJRefresh'
