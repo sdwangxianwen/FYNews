@@ -15,6 +15,7 @@ public enum HomeAPI {
     case kankanList(NSInteger)  //看看漫画的列表,有可变参数的时候,比如下拉刷新的pagenum的变化
     case douyuHotList //斗鱼的热门推荐
     case imageUrl //图片列表
+    case yqshopList //有妖气书架
     
 }
 
@@ -31,7 +32,10 @@ extension HomeAPI : TargetType {
             return URL(string: "http://appi.51kt.com/")!
         case .imageUrl:
             return URL(string: "https://open.adnonstop.com/")!
+        case .yqshopList:
+             return URL(string: "http://app.u17.com/")!
         }
+        
     }
     
     //各个请求的具体路径
@@ -45,6 +49,8 @@ extension HomeAPI : TargetType {
             return "client/Course/getTabList"
         case .imageUrl:
             return "camhomme/biz/prod/api/public/index.php"
+        case .yqshopList:
+            return "v3/appV3_3/ios/phone/comic/getDetectList"
         }
     }
     
@@ -58,6 +64,8 @@ extension HomeAPI : TargetType {
         case .douyuHotList:
             return .get
         case .imageUrl:
+            return .get
+        case .yqshopList:
             return .get
         }
     }
@@ -98,6 +106,18 @@ extension HomeAPI : TargetType {
         case .imageUrl:
             params["r"] = "ContentCenter/List"
             params["req"] = "eyJpc19lbmMiOjAsImN0aW1lIjoxNTM3MjYxNDQ4LjA3ODkxODksIm9zX3R5cGUiOiJpb3MiLCJkZXZpY2UiOiJpUGhvbmVfOF9QbHVzIiwiaW1laSI6IkVFNDVEM0E3LTNERDktNDE0Ny04NjIxLTlGRDQ2QkM5QjEwRCIsInZlcnNpb24iOiIzLjAuMCIsInBhcmFtIjp7InR5cGUiOjEsInBhZ2Vfc2l6ZSI6MTAsInBhZ2UiOjF9LCJhcHBfbmFtZSI6ImNhbWhvbW1lX2lwaG9uZSIsInNpZ25fY29kZSI6IjZiYjA4ZTFhZmQ4YWFkNjhlOWUifQ%3D%3D"
+            return .requestParameters(parameters: params,
+                                      encoding: URLEncoding.default)
+        case .yqshopList:
+//            ?device_id=46AC4F00-AC4A-4621-AE8F-0979DBA898E5&likeCate=&model=iPhone%208%20Plus&sexType=3&systemVersion=12.0&target=U17_3.0&time=1537349113&v=3361000&version=4.2.2
+            params["device_id"] = "46AC4F00-AC4A-4621-AE8F-0979DBA898E5"
+            params["likeCate"] = ""
+            params["model"] = "iPhone%208%20Plus"
+            params["systemVersion"] = "12.0"
+            params["target"] = "U17_3.0"
+            params["time"] = 1537349113
+            params["v"] = "3361000"
+            params["version"] = "4.2.2"
             return .requestParameters(parameters: params,
                                       encoding: URLEncoding.default)
         }
