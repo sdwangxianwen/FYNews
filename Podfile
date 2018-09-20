@@ -16,9 +16,10 @@ pod 'GuidePageView'
 
 #OC三方
   pod 'YYModel'
-  pod 'SDWebImage'
+#  pod 'SDWebImage'
   pod 'MJRefresh'
   pod 'MBProgressHUD'
+  pod 'SDCycleScrollView'
 
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!

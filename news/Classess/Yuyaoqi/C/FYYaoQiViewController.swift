@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SDCycleScrollView
 
-class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate {
+    var bannerView : SDCycleScrollView! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         netWorking()
@@ -21,7 +23,10 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
            print(response)
             //轮播图的网络请求
             let arr = NSArray.yy_modelArray(with: galleryItems.self, json: response["returnData"]["galleryItems"].rawValue) as! [galleryItems]
-            self.bannerM.addObjects(from: arr)
+            for bannerModel in arr {
+                self.bannerM.add(bannerModel.cover as Any)
+            }
+            self.bannerView.imageURLStringsGroup = (self.bannerM as! [Any])
             
             let arr1 = NSArray.yy_modelArray(with:comicLists.self , json:response["returnData"]["comicLists"].rawValue ) as! [comicLists]
             self.sectionsArrM.addObjects(from: arr1)
@@ -98,6 +103,10 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableView.register(UINib.init(nibName: "FYYaoQiBigIconTableViewCell", bundle: nil), forCellReuseIdentifier: "FYYaoQiBigIconTableViewCellID")
         tableView.register(FYYaoQiSmallIconTableViewCell.self, forCellReuseIdentifier: "FYYaoQiSmallIconTableViewCellID")
          tableView.register(FYYaoQiCateTableViewCell.self, forCellReuseIdentifier: "FYYaoQiCateTableViewCellID")
+        
+         self.bannerView = SDCycleScrollView.init(frame: CGRect(x: 0, y: 0, width: self.view.width, height: 200), delegate: self, placeholderImage: UIImage.init(named: ""))
+        tableView.tableHeaderView = bannerView
+        
         return tableView
     }()
     
