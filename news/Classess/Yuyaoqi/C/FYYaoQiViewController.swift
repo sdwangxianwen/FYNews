@@ -11,8 +11,6 @@ import UIKit
 class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MARK:隐藏NAV
-        navigationController?.setToolbarHidden(true, animated: false)
         netWorking()
         view.addSubview(tableView)
     }
@@ -38,10 +36,15 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return sectionsArrM.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let model = sectionsArrM[section] as! comicLists
-        return model.comics!.count
+        if section == 0 {
+            return 1
+        }
+        return 2
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return nil
+        }
         let label = UILabel.init(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 60))
          let model = sectionsArrM[section] as! comicLists
         label.text = model.itemTitle
@@ -50,44 +53,51 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return label
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.01
+        }
         return 60
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 150
+        if indexPath.section == 0 {
+            return 100
+        }
+        if indexPath.row == 0  && indexPath.section != 0{
+            return 300
         } else {
             return (self.view.width - 40)/3
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var cell : FYYQTableViewCell?
-        cell = (tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FYYQTableViewCell)
-        if cell == nil {
-            cell = FYYQTableViewCell(style: .default, reuseIdentifier: "cell")
-        }
-        
         let model = sectionsArrM[indexPath.section] as! comicLists
         let comModel = model.comics![indexPath.row]
-        print(comModel.name!)
         
-        return cell!
-        
-        
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FYYQTableViewCell
-//        let model = sectionsArrM[indexPath.section] as! comicLists
-//        let arr = NSArray.yy_modelArray(with: comicsModel.self, json: model.comics) as! [comicsModel]
-//        cell.setupUI(isBigIcon: indexPath.row == 0, model:arr[indexPath.row])
-//        return cell
+        if indexPath.row == 0 && indexPath.section != 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FYYaoQiBigIconTableViewCellID", for: indexPath) as! FYYaoQiBigIconTableViewCell
+            cell.setupUI(model: comModel)
+            
+            return cell
+        }
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FYYaoQiCateTableViewCellID", for: indexPath) as! FYYaoQiCateTableViewCell
+            cell.setupCateUI(modelArr: model.comics! as NSArray)
+            return cell
+        }
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FYYaoQiSmallIconTableViewCellID", for: indexPath) as! FYYaoQiSmallIconTableViewCell
+        cell.setupUI(modelArr: model.comics! as NSArray)
+        return cell
     }
     
     //MARK:懒加载一个tableview
     lazy var tableView = {() -> UITableView in
-        let tableView = UITableView.init(frame: self.view.frame, style: .plain)
+        let tableView = UITableView.init(frame:CGRect(x: 0, y: self.mNavigationbarHeight, width: self.view.width, height: self.view.height - self.mTabbarHeight - self.mNavigationbarHeight), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(FYYQTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.register(UINib.init(nibName: "FYYaoQiBigIconTableViewCell", bundle: nil), forCellReuseIdentifier: "FYYaoQiBigIconTableViewCellID")
+        tableView.register(FYYaoQiSmallIconTableViewCell.self, forCellReuseIdentifier: "FYYaoQiSmallIconTableViewCellID")
+         tableView.register(FYYaoQiCateTableViewCell.self, forCellReuseIdentifier: "FYYaoQiCateTableViewCellID")
         return tableView
     }()
     

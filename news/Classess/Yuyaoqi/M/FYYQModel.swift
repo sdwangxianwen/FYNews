@@ -9,23 +9,7 @@
 import UIKit
 import YYModel
 
-//分类的模型
-
-//@property (nonatomic, strong) NSString * argName;
-//@property (nonatomic, strong) NSString * argValue;
-//@property (nonatomic, assign) BOOL canChange;
-//@property (nonatomic, assign) BOOL canMore;
-//@property (nonatomic, assign) long comicType;
-//@property (nonatomic, strong) NSArray<comics *> * comics;
-//@property (nonatomic, strong) NSString * description;
-//@property (nonatomic, strong) NSString * itemTitle;
-//@property (nonatomic, strong) NSString * newTitleIconUrl;
-//@property (nonatomic, assign) long nextPage;
-//@property (nonatomic, strong) NSString * sortId;
-//@property (nonatomic, strong) NSString * titleIconUrl;
-
 @objcMembers class comicsModel: NSObject {
-   
     var argName : String?
     var cover : String?
     var itemTitle : String?
@@ -33,7 +17,6 @@ import YYModel
 }
 
 @objcMembers class comicLists: NSObject{
-    
     
     var argName : String?
     var argValue : String?
@@ -44,25 +27,10 @@ import YYModel
     var cover : String?
     var name : String?
     var comics : [comicsModel]?
-    
-//    override init() {
-//        super.init()
-//    }
-//    
-//    func encode(with aCoder: NSCoder) {
-//        self.yy_modelInit(with: aCoder)
-//    }
-//    
-//    required convenience init?(coder aDecoder: NSCoder) {
-//        self.init()
-//        self.yy_modelInit(with: aDecoder)
-//    }
-    
+
     static func modelContainerPropertyGenericClass() -> [String : Any]? {
         return ["comics":comicsModel.classForCoder()]
     }
-
-    
 }
 
 //轮播图的模型

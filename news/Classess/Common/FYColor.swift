@@ -15,7 +15,7 @@ extension UIColor {
         if cString.count < 6 {
             return UIColor.black
         }
-        if cString.hasPrefix("0X") {
+        if cString.hasPrefix("0x") {
             cString = String( cString.suffix(from: cString.index(cString.startIndex, offsetBy: 2)))
         }
         if cString.hasPrefix("#") {
@@ -125,6 +125,28 @@ extension UIView {
         }
         set {
             self.center = CGPoint(x: self.center.x, y: self.centerY)
+        }
+    }
+}
+
+extension UIViewController {
+    
+     /// 状态栏高度
+    var statusBarHeight : CGFloat {
+        get {
+            return UIApplication.shared.statusBarFrame.size.height
+        }
+    }
+    //导航栏高度+状态栏高度
+    var mNavigationbarHeight : CGFloat {
+        get {
+             return self.navigationController!.navigationBar.frame.size.height + UIApplication.shared.statusBarFrame.size.height
+        }
+    }
+    //tabBar高度
+    var mTabbarHeight : CGFloat {
+        get {
+           return self.tabBarController!.tabBar.bounds.size.height
         }
     }
 }
