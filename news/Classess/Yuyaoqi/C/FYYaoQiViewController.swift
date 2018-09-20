@@ -9,8 +9,6 @@
 import UIKit
 
 class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK:隐藏NAV
@@ -41,7 +39,7 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let model = sectionsArrM[section] as! comicLists
-        return model.comics.count
+        return model.comics!.count
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel.init(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 60))
@@ -54,10 +52,34 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 150
+        } else {
+            return (self.view.width - 40)/3
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        return cell
+        var cell : FYYQTableViewCell?
+        cell = (tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FYYQTableViewCell)
+        if cell == nil {
+            cell = FYYQTableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+        
+        let model = sectionsArrM[indexPath.section] as! comicLists
+        let comModel = model.comics![indexPath.row]
+        print(comModel.name!)
+        
+        return cell!
+        
+        
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FYYQTableViewCell
+//        let model = sectionsArrM[indexPath.section] as! comicLists
+//        let arr = NSArray.yy_modelArray(with: comicsModel.self, json: model.comics) as! [comicsModel]
+//        cell.setupUI(isBigIcon: indexPath.row == 0, model:arr[indexPath.row])
+//        return cell
     }
     
     //MARK:懒加载一个tableview
@@ -65,7 +87,7 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let tableView = UITableView.init(frame: self.view.frame, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(FYYQTableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     

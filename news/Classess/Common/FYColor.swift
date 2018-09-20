@@ -39,3 +39,92 @@ extension UIColor {
         return UIColor(displayP3Red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
     }
 }
+
+
+extension UIView {
+    
+    var width : CGFloat {
+        get {
+            return self.frame.size.width
+        }
+        set {
+            var frame = self.frame
+            frame.size.width = self.width
+            self.frame = frame;
+        }
+    }
+    
+    var height : CGFloat {
+        get {
+            return self.frame.size.height
+        }
+        
+        set {
+            var frame = self.frame
+            frame.size.height = self.height
+            self.frame = frame
+        }
+    }
+    
+    var left : CGFloat {
+        get {
+            return self.frame.origin.x
+        }
+        set {
+            var frame = self.frame;
+            frame.origin.x = self.left
+            self.frame = frame;
+        }
+    }
+    
+    var top : CGFloat {
+        get {
+            return self.frame.origin.y
+        }
+        set {
+            var frame = self.frame;
+            frame.origin.y = self.top
+            self.frame = frame;
+        }
+    }
+    
+    var right : CGFloat {
+        get {
+            return self.frame.origin.x + self.frame.size.width
+        }
+        set {
+            var frame = self.frame;
+            frame.origin.x = self.right - frame.size.width;
+            self.frame = frame;
+        }
+    }
+    
+    var bottom : CGFloat {
+        get {
+            return self.frame.origin.y + self.frame.size.height
+        }
+        set {
+            var frame = self.frame;
+            frame.origin.y = self.bottom - frame.size.height;
+            self.frame = frame;
+        }
+    }
+    
+    var centerX : CGFloat {
+        get {
+            return self.center.x
+        }
+        set {
+            self.center = CGPoint(x: self.centerX, y: self.center.y)
+        }
+    }
+    
+    var centerY : CGFloat {
+        get {
+            return self.center.y
+        }
+        set {
+            self.center = CGPoint(x: self.center.x, y: self.centerY)
+        }
+    }
+}

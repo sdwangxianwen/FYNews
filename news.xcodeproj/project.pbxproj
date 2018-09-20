@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		219555B221524C2500D2B2ED /* FYYaoQiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219555B121524C2500D2B2ED /* FYYaoQiViewController.swift */; };
 		219555B5215257AB00D2B2ED /* FYYQModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219555B4215257AB00D2B2ED /* FYYQModel.swift */; };
+		219555C821537B7500D2B2ED /* FYYQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219555C621537B7500D2B2ED /* FYYQTableViewCell.swift */; };
 		21C470E821464050005E63D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470E721464050005E63D2 /* AppDelegate.swift */; };
 		21C470EA21464050005E63D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C470E921464050005E63D2 /* HomeViewController.swift */; };
 		21C470F021464050005E63D2 /* news.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21C470EE21464050005E63D2 /* news.xcdatamodeld */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		219555B121524C2500D2B2ED /* FYYaoQiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYYaoQiViewController.swift; sourceTree = "<group>"; };
 		219555B4215257AB00D2B2ED /* FYYQModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYYQModel.swift; sourceTree = "<group>"; };
+		219555C621537B7500D2B2ED /* FYYQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYYQTableViewCell.swift; sourceTree = "<group>"; };
 		21C470E421464050005E63D2 /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C470E721464050005E63D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21C470E921464050005E63D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				219555B32152579300D2B2ED /* M */,
 				219555B021524C0500D2B2ED /* C */,
+				219555C521537B1800D2B2ED /* V */,
 			);
 			path = Yuyaoqi;
 			sourceTree = "<group>";
@@ -112,6 +115,14 @@
 				219555B4215257AB00D2B2ED /* FYYQModel.swift */,
 			);
 			path = M;
+			sourceTree = "<group>";
+		};
+		219555C521537B1800D2B2ED /* V */ = {
+			isa = PBXGroup;
+			children = (
+				219555C621537B7500D2B2ED /* FYYQTableViewCell.swift */,
+			);
+			path = V;
 			sourceTree = "<group>";
 		};
 		21C470DB21464050005E63D2 = {
@@ -499,6 +510,7 @@
 				21C4712621465E80005E63D2 /* FYZhiTableViewCell.swift in Sources */,
 				21C4711D214657EC005E63D2 /* FYHomeModel.swift in Sources */,
 				21C470F021464050005E63D2 /* news.xcdatamodeld in Sources */,
+				219555C821537B7500D2B2ED /* FYYQTableViewCell.swift in Sources */,
 				21C4711221464B5E005E63D2 /* FYMeViewController.swift in Sources */,
 				21C471CB2148EF7D005E63D2 /* KKTableViewCell.swift in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYModel
 
 //分类的模型
 
@@ -24,32 +25,43 @@ import UIKit
 //@property (nonatomic, strong) NSString * titleIconUrl;
 
 @objcMembers class comicsModel: NSObject {
+   
     var argName : String?
     var cover : String?
     var itemTitle : String?
-    var name : String?
-//    @property (nonatomic, assign) long argCon;
-//    @property (nonatomic, strong) NSString * argName;
-//    @property (nonatomic, assign) long argValue;
-//    @property (nonatomic, strong) NSString * cover;
-//    @property (nonatomic, assign) BOOL isClassify;
-//    @property (nonatomic, strong) NSString * itemTitle;
-//    @property (nonatomic, strong) NSString * name;
-    
+    var name : String?    
 }
 
-@objcMembers class comicLists: NSObject {
+@objcMembers class comicLists: NSObject{
+    
+    
     var argName : String?
     var argValue : String?
     var itemTitle : String?
     var newTitleIconUrl : String?
     var sortId : String?
     var titleIconUrl : String?
-    var comics : [comicsModel] = []
+    var cover : String?
+    var name : String?
+    var comics : [comicsModel]?
     
-    func commic() -> NSDictionary {
-        return [comics : comicsModel()]
+//    override init() {
+//        super.init()
+//    }
+//    
+//    func encode(with aCoder: NSCoder) {
+//        self.yy_modelInit(with: aCoder)
+//    }
+//    
+//    required convenience init?(coder aDecoder: NSCoder) {
+//        self.init()
+//        self.yy_modelInit(with: aDecoder)
+//    }
+    
+    static func modelContainerPropertyGenericClass() -> [String : Any]? {
+        return ["comics":comicsModel.classForCoder()]
     }
+
     
 }
 
