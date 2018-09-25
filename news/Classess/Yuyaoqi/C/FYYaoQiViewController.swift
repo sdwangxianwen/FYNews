@@ -11,6 +11,10 @@ import SDCycleScrollView
 
 class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate {
     var bannerView : SDCycleScrollView! = nil
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         netWorking()
@@ -96,7 +100,7 @@ class FYYaoQiViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     //MARK:懒加载一个tableview
     lazy var tableView = {() -> UITableView in
-        let tableView = UITableView.init(frame:CGRect(x: 0, y: self.mNavigationbarHeight, width: self.view.width, height: self.view.height - self.mTabbarHeight - self.mNavigationbarHeight), style: .plain)
+        let tableView = UITableView.init(frame:CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height - self.mTabbarHeight), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInsetAdjustmentBehavior = .never
